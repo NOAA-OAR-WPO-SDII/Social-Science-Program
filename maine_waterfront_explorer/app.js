@@ -54,7 +54,7 @@ function pItem(p, code, terms, extra) {
 
 /* ---------- tabs ---------- */
 function tabs() {
-  const t = [["overview", "Overview"], ["story", "Story"], ["codes", "Codes", CODES.length], ["topics", "Topics", TOPICS.length], ["map", "Map"], ["interviews", "Interviews", IV.length], ["search", "Search"] /*["method", "Method"]]*/;
+  const t = [["overview", "Overview"], ["story", "Story"], ["codes", "Codes", CODES.length], ["topics", "Topics", TOPICS.length], ["map", "Map"], ["interviews", "Interviews", IV.length], ["search", "Search"] /*["method", "Method"]]*/];
   $("#tabs").innerHTML = t.map(([id, label, n]) => `<button class="tab" role="tab" data-tab="${id}" aria-selected="${state.tab === id}">${label}${n != null ? `<span class="ct">${n}</span>` : ""}</button>`).join("");
 }
 function go(tab, patch = {}) { Object.assign(state, patch); state.tab = tab; store.set("tab", tab); render(); window.scrollTo({ top: 0 }); }
